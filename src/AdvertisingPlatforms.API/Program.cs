@@ -11,9 +11,10 @@ SerilogRegistration.Execute(builder.Configuration);
 builder.Services
     .AddApplication()
     .AddInfrastructure(builder.Configuration)
-    .AddSerilog()
     .AddSwagger()
     .AddControllers();
+
+builder.Host.UseSerilog();
 
 var app = builder.Build();
 
