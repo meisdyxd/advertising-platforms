@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatforms.Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatforms.Domain", "AdvertisingPlatforms.Domain\AdvertisingPlatforms.Domain.csproj", "{C248A3E7-4F12-4469-8D2E-43CDC1767E35}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisingPlatforms.Infrastructure.UnitTests", "..\tests\AdvertisingPlatforms.Infrastructure.UnitTests\AdvertisingPlatforms.Infrastructure.UnitTests.csproj", "{D75335C4-20EA-4C01-A41A-2FB5E9524563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{C248A3E7-4F12-4469-8D2E-43CDC1767E35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C248A3E7-4F12-4469-8D2E-43CDC1767E35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C248A3E7-4F12-4469-8D2E-43CDC1767E35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75335C4-20EA-4C01-A41A-2FB5E9524563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75335C4-20EA-4C01-A41A-2FB5E9524563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75335C4-20EA-4C01-A41A-2FB5E9524563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75335C4-20EA-4C01-A41A-2FB5E9524563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{B110A852-E818-4611-91F4-9238534D7CED} = {D9270D25-580C-4B8A-AF9A-281B0CF9EF9B}
 		{5E5BE4C5-6C19-4CB8-B4D4-BAB0F7D560F7} = {D9270D25-580C-4B8A-AF9A-281B0CF9EF9B}
 		{C248A3E7-4F12-4469-8D2E-43CDC1767E35} = {D9270D25-580C-4B8A-AF9A-281B0CF9EF9B}
+		{D75335C4-20EA-4C01-A41A-2FB5E9524563} = {36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BE224A1-4753-493D-835C-9601DC1DD666}
