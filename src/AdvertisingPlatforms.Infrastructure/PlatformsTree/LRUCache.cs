@@ -67,7 +67,7 @@ public class LRUCache<TKey, TValue> where TKey : notnull
         return false;
     }
 
-    private class CacheItem
+    internal class CacheItem
     {
         public TKey Key { get; }
         public TValue Value { get; set; }
@@ -84,5 +84,29 @@ public class LRUCache<TKey, TValue> where TKey : notnull
         lock (_lock)
             _list.Clear();
         _cache.Clear();
+    }
+
+    public int Count => _cache.Count;
+
+    public IReadOnlyList<TKey> GetKeysInOrder()
+    {
+        lock (_lock)
+        {
+            return [.. _list.Select(node => node.Key)];
+        }
+    }
+
+    public bool ContainsKey(TKey key) => _cache.ContainsKey(key);
+
+    public IReadOnlyList<TKey> GetAllKeys() => [.. _cache.Keys];
+
+    public IReadOnlyDictionary<TKey, TValue> GetCurrentState()
+    {
+        lock (_lock)
+        {
+            return _cache.ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value.Value.Value);
+        }
     }
 }

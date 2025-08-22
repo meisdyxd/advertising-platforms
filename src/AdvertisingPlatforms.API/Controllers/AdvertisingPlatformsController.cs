@@ -16,11 +16,11 @@ public class AdvertisingPlatformsController : MainController
         _mediator = mediator;
     }
     
-    [HttpGet("{*locationPath}")]
+    [HttpGet("{*LocationPath}")]
     public async Task<IActionResult> Get(
-        [FromRoute] string locationPath)
+        [FromRoute] GetPlatformsByLocationRequest request)
     {
-        var query = new GetPlatformsByLocationQuery(locationPath);
+        var query = request.ToCommand();
         var result = await _mediator.Send(query);
         return Ok(result);
     }
