@@ -1,5 +1,4 @@
 using AdvertisingPlatforms.Application.Queries.GetPlatformsByLocation;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AdvertisingPlatforms.API.Requests;
 

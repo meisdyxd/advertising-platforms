@@ -1,7 +1,7 @@
-﻿using AdvertisingPlatforms.Domain.Shared;
-using FluentValidation;
+﻿using Microsoft.Extensions.DependencyInjection;
+using AdvertisingPlatforms.Domain.Shared;
 using FluentValidation.Results;
-using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
 
 namespace AdvertisingPlatforms.Application.Services;
 

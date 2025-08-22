@@ -1,6 +1,5 @@
 using AdvertisingPlatforms.Application.UseCases.UploadPlatforms;
 using AdvertisingPlatforms.Contracts.Dtos;
-using Microsoft.AspNetCore.Mvc;
 
 namespace AdvertisingPlatforms.API.Requests;
 
