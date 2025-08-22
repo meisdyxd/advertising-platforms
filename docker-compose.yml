@@ -1,0 +1,10 @@
+services:
+  backend:
+    container_name: advertising-platforms-backend
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    build:
+      context: .
+      dockerfile: src/Dockerfile
+    ports:
+      - "7251:8080"
