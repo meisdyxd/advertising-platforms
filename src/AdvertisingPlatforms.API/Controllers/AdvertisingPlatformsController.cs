@@ -25,7 +25,7 @@ public class AdvertisingPlatformsController : MainController
         return Ok(result);
     }
     
-    [HttpPost("upload")]
+    [HttpPost]
     [Consumes("multipart/form-data")]
     public async Task<IActionResult> Upload(
         [FromForm] UploadPlatformRequest request,
@@ -36,6 +36,6 @@ public class AdvertisingPlatformsController : MainController
         var command = request.ToCommand(file);
         await _mediator.Send(command, cancellationToken);
 
-        return Ok();
+        return NoContent();
     }
 }
