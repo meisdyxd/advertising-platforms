@@ -4,9 +4,9 @@ namespace AdvertisingPlatforms.Application.Services;
 
 public class PlatformService
 {
-    private readonly IPlatformsTree _platformsTree;
+    private readonly IPlatformTree _platformsTree;
 
-    public PlatformService(IPlatformsTree platformsTree)
+    public PlatformService(IPlatformTree platformsTree)
     {
         _platformsTree = platformsTree;
     }

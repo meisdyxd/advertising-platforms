@@ -1,27 +1,21 @@
-using AdvertisingPlatforms.Infrastructure.PlatformsTree;
-using AdvertisingPlatforms.Application.Interfaces;
-using AdvertisingPlatforms.Application.Services;
+using AdvertisingPlatforms.API.Middlewares;
+using AdvertisingPlatforms.API.Registrations;
 using AdvertisingPlatforms.Application;
+using AdvertisingPlatforms.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
-builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(configuration =>
-{
-    configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
-});
-
-builder.Services.AddSingleton<IPlatformsTree, PlatformsTree>();
-builder.Services.AddScoped<PlatformService>();
+builder.Services
+    .AddApplication()
+    .AddInfrastructure()
+    .AddSwagger()
+    .AddControllers();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseCustomExceptionHandler();
+
+app.UseSwaggerCustom();
 
 app.UseHttpsRedirection();
 

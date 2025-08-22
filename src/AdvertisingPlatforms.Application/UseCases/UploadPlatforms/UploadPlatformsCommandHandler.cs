@@ -17,8 +17,6 @@ public class UploadPlatformsCommandHandler: IRequestHandler<UploadPlatformsComma
         CancellationToken cancellationToken)
     {
         var filename = command.File.FileName;
-        if (Path.GetExtension(filename) != ".txt")
-            throw new Exception("Invalid file extension");
         
         var sr = new StreamReader(command.File.Stream);
         _platformService.UploadPlatforms(sr);

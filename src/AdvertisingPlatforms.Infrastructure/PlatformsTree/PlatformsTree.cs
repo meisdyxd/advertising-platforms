@@ -4,7 +4,7 @@ using AdvertisingPlatforms.Infrastructure.Extensions;
 
 namespace AdvertisingPlatforms.Infrastructure.PlatformsTree;
 
-public class PlatformsTree : IPlatformsTree
+public class PlatformTree : IPlatformTree
 {
     private readonly LRUCache<string, HashSet<string>> _cache = new();
     private ConcurrentDictionary<string, Node> Heads { get; set; } = [];

@@ -1,14 +1,13 @@
+using AdvertisingPlatforms.Application.Queries.GetPlatformsByLocation;
 using AdvertisingPlatforms.API.Processors;
 using AdvertisingPlatforms.API.Requests;
-using AdvertisingPlatforms.Application.Queries.GetPlatformsByLocation;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using MediatR;
 
 namespace AdvertisingPlatforms.API.Controllers;
 
-[ApiController]
 [Route("api/platforms")]
-public class AdvertisingPlatformsController : ControllerBase
+public class AdvertisingPlatformsController : MainController
 {
     private readonly IMediator _mediator;
 
@@ -33,10 +32,10 @@ public class AdvertisingPlatformsController : ControllerBase
         CancellationToken cancellationToken)
     {
         await using var processor = new FormFileProcessor();
-        var file =  processor.Process(request.File);
+        var file = processor.Process(request.File);
         var command = request.ToCommand(file);
         await _mediator.Send(command, cancellationToken);
-        
+
         return Ok();
     }
 }
