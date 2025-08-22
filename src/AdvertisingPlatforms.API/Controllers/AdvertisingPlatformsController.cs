@@ -1,4 +1,3 @@
-using AdvertisingPlatforms.Application.Queries.GetPlatformsByLocation;
 using AdvertisingPlatforms.API.Processors;
 using AdvertisingPlatforms.API.Requests;
 using Microsoft.AspNetCore.Mvc;
@@ -18,10 +17,11 @@ public class AdvertisingPlatformsController : MainController
     
     [HttpGet("{*LocationPath}")]
     public async Task<IActionResult> Get(
-        [FromRoute] GetPlatformsByLocationRequest request)
+        [FromRoute] GetPlatformsByLocationRequest request,
+        CancellationToken cancellationToken)
     {
         var query = request.ToCommand();
-        var result = await _mediator.Send(query);
+        var result = await _mediator.Send(query, cancellationToken);
         return Ok(result);
     }
     
